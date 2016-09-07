@@ -1,4 +1,5 @@
-$('#bomb-mason').on('submit', function(){
-  $.get('/');
+var $ = require('jquery');
 
+$('#bomb-mason').on('click', function(){
+  $.get('/mason');
 });
