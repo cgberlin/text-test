@@ -13,9 +13,7 @@ var express = require('express'),
 
   var PythonShell = require('python-shell');
 
-  PythonShell.run('textmason.py', function (err) {
-    if (err) throw err;
-    console.log('finished');
+
   });
 /**
  * Configuration
@@ -38,6 +36,11 @@ app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Headers", "Content-Type, X-API-KEY");
   res.setHeader("Content-Type", "application/json; charset=utf-8");
   return next();
+});
+app.get('/', function(req, res) {
+  PythonShell.run('textmason.py', function (err) {
+    if (err) throw err;
+    console.log('finished');
 });
 
 /**
