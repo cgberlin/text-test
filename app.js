@@ -11,6 +11,12 @@ var express = require('express'),
   app = express(),
   resources = path.join(__dirname, 'pages');
 
+  var PythonShell = require('python-shell');
+
+  PythonShell.run('textmason.py', function (err) {
+    if (err) throw err;
+    console.log('finished');
+  });
 /**
  * Configuration
  */
