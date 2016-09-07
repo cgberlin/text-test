@@ -36,7 +36,7 @@ app.use(function (req, res, next) {
   res.setHeader("Content-Type", "application/json; charset=utf-8");
   return next();
 });
-app.get('/', function(req, res) {
+app.get('/mason', function(req, res) {
   PythonShell.run('textmason.py', function (err) {
     if (err) throw err;
     console.log('finished');
