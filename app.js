@@ -14,7 +14,7 @@ var express = require('express'),
   var PythonShell = require('python-shell');
 
 
-  });
+  
 /**
  * Configuration
  */
