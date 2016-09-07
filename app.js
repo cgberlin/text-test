@@ -14,7 +14,6 @@ var express = require('express'),
   var PythonShell = require('python-shell');
 
 
-  
 /**
  * Configuration
  */
@@ -41,6 +40,7 @@ app.get('/', function(req, res) {
   PythonShell.run('textmason.py', function (err) {
     if (err) throw err;
     console.log('finished');
+  });
 });
 
 /**
