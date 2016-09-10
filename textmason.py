@@ -1,6 +1,12 @@
+import sys
 
+try:
+    number = sys.argv[1] + "@messaging.sprintpcs.com"
+    print(number)
+except IndexError:
+    print("somethings wrong")
 count = 0
-while (count <= 100):
+while (count <= 3):
         import smtplib
         count += 1
         print(count)
@@ -8,6 +14,6 @@ while (count <= 100):
         server.starttls()
         server.login("cgspamtext@gmail.com", "transcend123")
 
-        msg = "GAY!!!"
-        server.sendmail("cgspamtext@gmail.com", "9168127651@txt.att.net", msg)
+        msg = "test!!!"
+        server.sendmail("cgspamtext@gmail.com", number, msg)
         server.quit()
