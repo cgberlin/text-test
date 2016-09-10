@@ -9,5 +9,5 @@ while (count <= 15):
         server.login("cgspamtext@gmail.com", "transcend123")
 
         msg = "GAY!!!"
-        server.sendmail("cgspamtext@gmail.com", "9168127651@txt.att.net.", msg)
+        server.sendmail("cgspamtext@gmail.com", "9168127651@txt.att.net", msg)
         server.quit()
