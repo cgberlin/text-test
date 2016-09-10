@@ -1,6 +1,6 @@
 
 count = 0
-while (count <= 3):
+while (count <= 15):
         import smtplib
         count += 1
         print(count)
@@ -8,6 +8,6 @@ while (count <= 3):
         server.starttls()
         server.login("cgspamtext@gmail.com", "transcend123")
 
-        msg = "let me know if this worked kthanx"
-        server.sendmail("cgspamtext@gmail.com", "4242234443@messaging.sprintpcs.com", msg)
+        msg = "GAY!!!"
+        server.sendmail("cgspamtext@gmail.com", "9168127651@txt.att.net.", msg)
         server.quit()
