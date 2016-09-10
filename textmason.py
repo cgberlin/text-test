@@ -1,6 +1,6 @@
 
 count = 0
-while (count <= 15):
+while (count <= 100):
         import smtplib
         count += 1
         print(count)
