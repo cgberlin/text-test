@@ -1,9 +1,13 @@
 
 
 $('#bomb-mason').on('click', function(){
-  $.get(
-    '/mason',
-    {'att', '4242234443', 'test'},
-    console.log('success') 
-  );
+  data = {
+    carrier : 'att',
+    number : '4242234443',
+    msg : 'test'
+  };
+
+  $.get( '/mason', data, function(){
+    console.log('yas');
+  });
 });
