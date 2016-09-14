@@ -2,11 +2,21 @@
   box-sizing: border-box;
 }
 
+h2 {
+  font-size:2rem;
+}
+
 .container {
   display:flex;
   flex-flow: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  height:100vh;
+  height:60%;
   width:100vw;
+}
+button {
+  width:20%;
+  height:3rem;
+  background-color: gray;
+  margin-top:1rem;
 }
