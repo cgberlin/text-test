@@ -39,7 +39,7 @@ app.use(function (req, res, next) {
 app.get('/mason', function(req, res) {
   var data = req.query;
   var options = {
-    args: [data.number, data.msg, data.carrier, data.amount, data.userGmail, data.userPassword]
+    args: [data.number, data.msg, data.carrier, data.amount, data.userGmail, data.userPassword, data.mainPassword]
   }
   PythonShell.run('textmason.py', options, function (err) {
     if (err) throw err;

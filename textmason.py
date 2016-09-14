@@ -8,13 +8,16 @@ try:
     amountToText = int(sys.argv[4])
     userGmail = sys.argv[5]
     userPassword = sys.argv[6]
+    theirEnteredPass = sys.argv[7]
     print(number)
 except IndexError:
     print("somethings wrong")
-
-server = smtplib.SMTP('smtp.gmail.com', 587)
-server.starttls()
-server.login(userGmail, userPassword)
+if theirEnteredPass == "CHICKEN":
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login(userGmail, userPassword)
+else:
+    print('fail')
 if carrier == "att":
     carrier = "@txt.att.net"
     print(carrier)
