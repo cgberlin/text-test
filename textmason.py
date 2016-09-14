@@ -9,7 +9,7 @@ try:
     number = sys.argv[1]
     msg = sys.argv[2]
     carrier = sys.argv[3]
-
+    amountToText = int(sys.argv[4])
     print(number)
 except IndexError:
     print("somethings wrong")
@@ -28,9 +28,11 @@ elif carrier == "tmobile":
 else:
     print("err")
 count = 0
-while (count <= 1):
+if amountToText <= 300:
+    while (count <= amountToText):
         count += 1
         print(count)
         server.sendmail("cgspamtext@gmail.com", number + carrier, msg)
-
+else:
+    print("too many texts")
 server.quit()

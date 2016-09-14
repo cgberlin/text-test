@@ -37,8 +37,11 @@ app.use(function (req, res, next) {
   return next();
 });
 app.get('/mason', function(req, res) {
-  console.log(req.query);
-  PythonShell.run('textmason.py', function (err) {
+  var data = req.query;
+  var options = {
+    args: [data.number, data.msg, data.carrier, data.amount]
+  }
+  PythonShell.run('textmason.py', options, function (err) {
     if (err) throw err;
     console.log('finished');
   });

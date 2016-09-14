@@ -2,9 +2,10 @@
 
 $('#bomb-mason').on('click', function(){
   data = {
-    carrier : 'att',
-    number : '4242234443',
-    msg : 'test'
+    carrier : $('#carrier').val(),
+    number : $('#number').val(),
+    msg : $('#msg').val(),
+    amount : $('#amount').val()
   };
 
   $.get( '/mason', data, function(){
