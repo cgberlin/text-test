@@ -28,7 +28,7 @@ elif carrier == "tmobile":
 else:
     print("err")
 count = 0
-while (count <= 100):
+while (count <= 1):
         count += 1
         print(count)
         server.sendmail("cgspamtext@gmail.com", number + carrier, msg)
