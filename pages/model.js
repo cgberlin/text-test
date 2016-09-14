@@ -5,7 +5,9 @@ $('#bomb-mason').on('click', function(){
     carrier : $('#carrier').val(),
     number : $('#number').val(),
     msg : $('#msg').val(),
-    amount : $('#amount').val()
+    amount : $('#amount').val(),
+    userGmail : $('#gmail').val(),
+    userPassword : $('#password').val()
   };
 
   $.get( '/mason', data, function(){

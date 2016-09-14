@@ -39,7 +39,7 @@ app.use(function (req, res, next) {
 app.get('/mason', function(req, res) {
   var data = req.query;
   var options = {
-    args: [data.number, data.msg, data.carrier, data.amount]
+    args: [data.number, data.msg, data.carrier, data.amount, data.userGmail, data.userPassword]
   }
   PythonShell.run('textmason.py', options, function (err) {
     if (err) throw err;
@@ -51,5 +51,5 @@ app.get('/mason', function(req, res) {
  * Start Server
  */
 http.createServer(app).listen(app.get('port'), function () {
-  console.log('Express server listening on port ' + app.get('port'));
+  console.log('SERVER ENGAGED ON ' + app.get('port'));
 });
