@@ -12,7 +12,7 @@ try:
     print(number)
 except IndexError:
     print("somethings wrong")
-if theirEnteredPass == "CHICKEN":
+if theirEnteredPass == "LASAGNA":
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
     server.login(userGmail, userPassword)
