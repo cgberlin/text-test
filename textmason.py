@@ -13,9 +13,11 @@ try:
 except IndexError:
     print("somethings wrong")
 if theirEnteredPass == "LASAGNA":
-    server = smtplib.SMTP('smtp.gmail.com', 587)
-    server.starttls()
-    server.login(userGmail, userPassword)
+    
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login(userGmail, userPassword)
+
 else:
     print('fail')
 if carrier == "att":
@@ -37,7 +39,10 @@ if amountToText <= 300:
     while (count <= amountToText):
         count += 1
         print(count)
-        server.sendmail(userGmail, number + carrier, msg)
+        try:
+            server.sendmail(userGmail, number + carrier, msg)
+        except smtplib.something.senderror, errormsg:
+            raise SendError("Couldn't send message: most likely overtried")
 else:
     print("too many texts")
 server.quit()
