@@ -4,7 +4,7 @@
   "description": "auto texter",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "forever start app.js",
     "test": "echo \"BLAH\" && exit 1",
     "text-mason": "node call-child.js"
   },
