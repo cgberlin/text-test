@@ -10,7 +10,9 @@ $('#bomb-mason').on('click', function(){
     userPassword : $('#password').val(),
     mainPassword : $('#main-password').val()
   };
-  $.get( '/mason', data, function(){
-    console.log('yas');
-  });
+  $.get( '/mason', data);
 });
+
+$('#login-button').on('click', function(){
+  $.get('/login/facebook');
+})

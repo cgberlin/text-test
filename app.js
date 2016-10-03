@@ -10,8 +10,22 @@ var express = require('express'),
   path = require('path'),
   app = express(),
   resources = path.join(__dirname, 'pages');
+var PythonShell = require('python-shell');
+var passport = require('passport');
+var FacebookStrategy = require('passport-facebook').Strategy;
 
-  var PythonShell = require('python-shell');
+
+passport.use(new FacebookStrategy({
+    clientID: '1801954643381344',
+    clientSecret: "a73787f6640bf5263062ddaeba009eb0",
+    callbackURL: "http://localhost:3000/auth/facebook/callback"
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+      return cb(err, user);
+    });
+  }
+));
 
 
 /**
@@ -46,6 +60,17 @@ app.get('/mason', function(req, res) {
     console.log('finished');
   });
 });
+
+app.get('/login/facebook',
+  passport.authenticate('facebook'));
+
+// handle the callback after facebook has authenticated the user
+app.get('/login/facebook/callback',
+    passport.authenticate('facebook', {
+        successRedirect : '/main.html',
+        failureRedirect : '/pages'
+    }));
+
 
 /**
  * Start Server
